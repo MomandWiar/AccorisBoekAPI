@@ -1,5 +1,13 @@
-﻿namespace Infrastructure;
+﻿using Infrastructure.Repositories.Authors;
+using Microsoft.Extensions.DependencyInjection;
 
-public class DependencyInjection
+namespace Infrastructure;
+
+public static class DependencyInjection
 {
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    {
+        services.AddScoped<IAuthorRepository, AuthorRepository>();
+        return services;
+    }
 }
