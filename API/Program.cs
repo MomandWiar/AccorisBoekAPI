@@ -1,3 +1,4 @@
+using Application;
 using Domain;
 using Infrastructure;
 
@@ -8,7 +9,8 @@ builder.Services.AddOpenApi();
 
 builder.Services
     .AddDomain()
-    .AddInfrastructure();
+    .AddInfrastructure()
+    .AddApplication();
 
 var app = builder.Build();
 
