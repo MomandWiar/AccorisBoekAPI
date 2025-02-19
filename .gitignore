@@ -1,0 +1,60 @@
+# Ignore Rider IDE files
+.idea/
+
+# Ignore .NET build files
+bin/
+obj/
+
+# User-specific files (Windows)
+Thumbs.db
+Desktop.ini
+
+# User-specific files (macOS)
+.DS_Store
+
+# JetBrains Rider specific files
+.idea/
+
+# .NET Core / .NET 5+ files
+# Ignore generated files from .NET SDK
+.vs2019/
+.vs2017/
+.vs/
+
+# User-specific files for Visual Studio Code
+.vscode/
+
+# ASP.NET files
+wwwroot/
+
+# Ignore NuGet package files
+.nuget/
+packages/
+
+# Ignore compiled assemblies
+*.dll
+*.exe
+*.pdb
+
+# Ignore temporary files from Visual Studio (Windows) and Rider
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignore log files
+*.log
+
+# Ignore coverage and test files
+*.coverage
+*.testresults
+
+# Ignore global package caches (NuGet)
+.nuget/packages/
+
+# Ignore JetBrains Rider local settings
+.idea/.idea/
+
+# Ignore code analysis files
+.idea/.idea/inspectionProfiles/
+.idea/.idea/sonar/
