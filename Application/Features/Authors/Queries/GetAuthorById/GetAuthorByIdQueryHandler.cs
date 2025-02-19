@@ -2,7 +2,7 @@ using Domain.Entities;
 using Infrastructure.Repositories.Authors;
 using MediatR;
 
-namespace Application.Features.Authors.Queries.GetAuthorById;
+namespace Application.Features.Authors.Queries;
 
 public sealed class GetAuthorByIdQueryHandler(IAuthorRepository _authorRepository) : IRequestHandler<GetAuthorByIdQuery, AuthorEntity>
 {

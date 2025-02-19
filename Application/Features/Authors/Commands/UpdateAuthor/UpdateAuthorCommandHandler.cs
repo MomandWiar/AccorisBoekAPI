@@ -1,7 +1,7 @@
 using Infrastructure.Repositories.Authors;
 using MediatR;
 
-namespace Application.Features.Authors.Commands.UpdateAuthor;
+namespace Application.Features.Authors.Commands;
 
 public sealed class UpdateAuthorCommandHandler(IAuthorRepository _authorRepository) : IRequestHandler<UpdateAuthorCommand, Unit>
 {

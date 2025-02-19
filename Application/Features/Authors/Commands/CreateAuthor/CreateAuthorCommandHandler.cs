@@ -2,7 +2,7 @@ using Domain.Entities;
 using Infrastructure.Repositories.Authors;
 using MediatR;
 
-namespace Application.Features.Authors.Commands.CreateAuthor;
+namespace Application.Features.Authors.Commands;
 
 public sealed class CreateAuthorCommandHandler(IAuthorRepository _authorRepository) : IRequestHandler<CreateAuthorCommand, int>
 {

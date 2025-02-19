@@ -1,7 +1,7 @@
 using Infrastructure.Repositories.Authors;
 using MediatR;
 
-namespace Application.Features.Authors.Commands.DeleteAuthor;
+namespace Application.Features.Authors.Commands;
 
 public sealed class DeleteAuthorCommandHandler(IAuthorRepository _authorRepository) : IRequestHandler<DeleteAuthorCommand, Unit>
 {

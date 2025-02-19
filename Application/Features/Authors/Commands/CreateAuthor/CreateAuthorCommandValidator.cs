@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Application.Features.Authors.Commands.CreateAuthor;
+namespace Application.Features.Authors.Commands;
 
 public class CreateAuthorCommandValidator : AbstractValidator<CreateAuthorCommand>
 {
