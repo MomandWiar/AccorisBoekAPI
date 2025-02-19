@@ -1,7 +1,12 @@
+using Domain;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+builder.Services
+    .AddDomain();
 
 var app = builder.Build();
 
