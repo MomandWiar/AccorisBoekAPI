@@ -1,6 +1,6 @@
 using Domain.Entities;
 
-namespace Infrastructure.Repositories.Authors;
+namespace Infrastructure.Repositories.Author;
 
 public interface IAuthorRepository
 {

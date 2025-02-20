@@ -1,4 +1,4 @@
-using Infrastructure.Repositories.Authors;
+using Infrastructure.Repositories.Author;
 using MediatR;
 
 namespace Application.Features.Authors.Commands;

@@ -2,7 +2,7 @@ using Domain;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories.Authors;
+namespace Infrastructure.Repositories.Author;
 
 public class AuthorRepository(AppDbContext _context) : IAuthorRepository
 {
