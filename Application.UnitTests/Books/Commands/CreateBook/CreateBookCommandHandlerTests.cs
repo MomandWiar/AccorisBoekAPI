@@ -20,7 +20,8 @@ public class CreateBookCommandHandlerTests
     [Fact]
     public async Task Handle_Should_Create_Book_And_Return_Id()
     {
-        var command = new CreateBookCommand("Sample Book", 1);
+        var publicationDate = new DateTime(2025, 2, 20);
+        var command = new CreateBookCommand("Sample Book", 1, publicationDate);
         var author = new AuthorEntity { Id = 1, Name = "John Doe" };
 
         _authorRepositoryMock.Setup(repo => repo.GetById(1)).ReturnsAsync(author);
@@ -37,7 +38,9 @@ public class CreateBookCommandHandlerTests
     [Fact]
     public async Task Handle_Should_Throw_ArgumentException_When_Author_Not_Found()
     {
-        var command = new CreateBookCommand("Sample Book", 999);  // Invalid AuthorId
+
+        var publicationDate = new DateTime(2025, 2, 20);
+        var command = new CreateBookCommand("Sample Book", 999, publicationDate);
 
         _authorRepositoryMock.Setup(repo => repo.GetById(999)).ReturnsAsync((AuthorEntity)null);
 
