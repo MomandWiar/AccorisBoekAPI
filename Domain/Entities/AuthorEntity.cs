@@ -1,9 +1,11 @@
+using System.Text.Json.Serialization;
+
 namespace Domain.Entities;
 
 public class AuthorEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public int BirthYear { get; set; }
-    public List<BookEntity> Books { get; set; } = new();
+    [JsonIgnore]
+    public ICollection<BookEntity> Books { get; set; } = new List<BookEntity>();
 }

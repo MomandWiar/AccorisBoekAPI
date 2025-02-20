@@ -10,10 +10,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<BookEntity>()
-            .HasOne(b => b.Author)
-            .WithMany()
-            .HasForeignKey(b => b.AuthorId)
+        modelBuilder.Entity<AuthorEntity>()
+            .HasMany(e => e.Books)
+            .WithOne(e => e.Author)
+            .HasForeignKey(e => e.AuthorId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
