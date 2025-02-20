@@ -9,7 +9,7 @@ public sealed class CreateBookCommandHandler(IBookRepository _bookRepository, IA
 {
     public async Task<int> Handle(CreateBookCommand request, CancellationToken cancellationToken)
     {
-        var author = await _authorRepository.GetById(request.Book.AuthorId);
+        var author = await _authorRepository.GetById(request.AuthorId);
             
         if (author == null)
         {
@@ -18,9 +18,8 @@ public sealed class CreateBookCommandHandler(IBookRepository _bookRepository, IA
 
         var book = new BookEntity
         {
-            Title = request.Book.Title,
-            AuthorId = request.Book.AuthorId,
-            PublicationYear = request.Book.PublicationYear
+            Title = request.Title,
+            AuthorId = request.AuthorId
         };
 
         await _bookRepository.Create(book);

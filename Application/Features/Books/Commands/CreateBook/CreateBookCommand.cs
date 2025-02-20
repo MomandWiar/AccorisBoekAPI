@@ -3,4 +3,4 @@ using MediatR;
 
 namespace Application.Features.Books.Commands;
 
-public record CreateBookCommand(BookEntity Book) : IRequest<int>;
+public record CreateBookCommand(string Title, int AuthorId) : IRequest<int>;

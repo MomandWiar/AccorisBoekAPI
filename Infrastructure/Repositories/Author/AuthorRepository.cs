@@ -20,12 +20,12 @@ public class AuthorRepository(AppDbContext _context) : IAuthorRepository
 
     public async Task<List<AuthorEntity>> Get()
     {
-        return await _context.Authors.ToListAsync();
+        return await _context.Authors.Include(a => a.Books).ToListAsync();
     }
 
     public async Task<AuthorEntity?> GetById(int id)
     {
-        return await _context.Authors.Where(x => x.Id == id).FirstOrDefaultAsync();
+        return await _context.Authors.Where(x => x.Id == id).Include(a => a.Books).FirstOrDefaultAsync();
     }
 
     public async Task Update(AuthorEntity author)

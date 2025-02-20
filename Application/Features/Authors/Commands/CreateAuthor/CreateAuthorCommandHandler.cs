@@ -11,7 +11,6 @@ public sealed class CreateAuthorCommandHandler(IAuthorRepository _authorReposito
         var author = new AuthorEntity
         {
             Name = request.Name,
-            BirthYear = request.BirthYear
         };
 
         await _authorRepository.Create(author);

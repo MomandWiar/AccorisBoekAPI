@@ -16,7 +16,6 @@ public sealed class UpdateBookCommandHandler(IBookRepository _bookRepository) : 
 
         book.Title = request.Book.Title;
         book.AuthorId = request.Book.AuthorId;
-        book.PublicationYear = request.Book.PublicationYear;
 
         await _bookRepository.Update(book);
 

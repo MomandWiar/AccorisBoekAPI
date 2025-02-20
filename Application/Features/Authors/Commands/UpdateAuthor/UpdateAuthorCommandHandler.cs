@@ -15,7 +15,6 @@ public sealed class UpdateAuthorCommandHandler(IAuthorRepository _authorReposito
         }
 
         author.Name = request.Author.Name;
-        author.BirthYear = request.Author.BirthYear;
 
         await _authorRepository.Update(author);
 

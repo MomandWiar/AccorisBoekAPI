@@ -1,12 +1,11 @@
 ﻿using Infrastructure.Repositories.Book;
-using Domain.Entities;
 using MediatR;
-
+using Application.DTOs;
 namespace Application.Features.Books.Queries;
 
-public sealed class GetBookByIdQueryHandler(IBookRepository _bookRepository) : IRequestHandler<GetBookByIdQuery, BookEntity>
+public sealed class GetBookByIdQueryHandler(IBookRepository _bookRepository) : IRequestHandler<GetBookByIdQuery, BookDto>
 {
-    public async Task<BookEntity> Handle(GetBookByIdQuery request, CancellationToken cancellationToken)
+    public async Task<BookDto> Handle(GetBookByIdQuery request, CancellationToken cancellationToken)
     {
         var book = await _bookRepository.GetById(request.Id);
 
@@ -15,6 +14,14 @@ public sealed class GetBookByIdQueryHandler(IBookRepository _bookRepository) : I
             throw new KeyNotFoundException("Book not found");
         }
 
-        return book;
+        var bookDto = new BookDto
+        {
+            Id = book.Id,
+            Title = book.Title,
+            AuthorId = book.AuthorId,
+            AuthorName = book.Author.Name
+        };
+
+        return bookDto;
     }
 }
